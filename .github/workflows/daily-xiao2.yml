@@ -1,4 +1,4 @@
-name: Daily Fetch
+name: Daily xiao2
 
 on:
   schedule:

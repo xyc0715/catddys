@@ -41,13 +41,54 @@ var isIPv4 = (item) => {
   const family = typeof item.family === "string" ? item.family : String(item.family || "");
   return family === "IPv4" || family === "4";
 };
+var isValidIPv4 = (ip) => {
+  const text = String(ip || "").trim();
+  if (!/^\d{1,3}(\.\d{1,3}){3}$/.test(text))
+    return false;
+  return text.split(".").every((part) => {
+    const value = Number(part);
+    return Number.isInteger(value) && value >= 0 && value <= 255;
+  });
+};
 var isPrivateIPv4 = (ip) => {
   return /^192\.168\./.test(ip) || /^10\./.test(ip) || /^172\.(1[6-9]|2\d|3[0-1])\./.test(ip);
 };
+var isCgnatIPv4 = (ip) => /^100\.(6[4-9]|[7-9]\d|1[01]\d|12[0-7])\./.test(ip);
+var isReservedOrUnroutableIPv4 = (ip) => {
+  const text = String(ip || "").trim();
+  return /^0\./.test(text) || /^127\./.test(text) || /^169\.254\./.test(text) || /^192\.0\.0\./.test(text) || /^192\.0\.2\./.test(text) || /^198\.18\./.test(text) || /^198\.19\./.test(text) || /^198\.51\.100\./.test(text) || /^203\.0\.113\./.test(text) || /^22[4-9]\./.test(text) || /^23\d\./.test(text) || /^24\d\./.test(text) || /^25[0-5]\./.test(text);
+};
+var isLikelyCellularInterface = (name = "") => /(rmnet|ccmni|pdp|wwan|cell|mobile|clat|v4-rmnet)/i.test(String(name || ""));
+var isLikelyLanInterface = (name = "") => /(wlan|wi-?fi|eth|en\d|lan|bridge|br-)/i.test(String(name || ""));
+var isLikelyVirtualOrTunnelInterface = (name = "") => /(virtual|veth|vethernet|vmware|vbox|hyper-v|docker|podman|wsl|utun|tun|tap|tailscale|zerotier|wireguard|wg|clash|mihomo|loopback|pseudo)/i.test(String(name || ""));
+var calcCandidateScore = (candidate) => {
+  let score = 0;
+  if (/^192\.168\./.test(candidate.ip)) {
+    score += 300;
+  } else if (/^172\.(1[6-9]|2\d|3[0-1])\./.test(candidate.ip)) {
+    score += 260;
+  } else if (/^10\./.test(candidate.ip)) {
+    score += 220;
+  } else if (!isCgnatIPv4(candidate.ip)) {
+    score += 180;
+  }
+  if (isLikelyLanInterface(candidate.name))
+    score += 80;
+  if (isLikelyCellularInterface(candidate.name))
+    score -= 320;
+  if (isLikelyVirtualOrTunnelInterface(candidate.name))
+    score -= 260;
+  if (isCgnatIPv4(candidate.ip))
+    score -= 220;
+  return score;
+};
 var getIPAddress = function() {
+  const forcedIp = String(process.env.CATPAW_HOST_IP || process.env.HOST_IP || "").trim();
+  if (isValidIPv4(forcedIp))
+    return forcedIp;
   const interfaces = import_os.default.networkInterfaces() || {};
-  const ips = [];
-  Object.values(interfaces).forEach((items) => {
+  const candidates = [];
+  Object.entries(interfaces).forEach(([name, items]) => {
     if (!Array.isArray(items))
       return;
     items.forEach((item) => {
@@ -58,17 +99,29 @@ var getIPAddress = function() {
       const ip = String(item.address || "").trim();
       if (!ip || ip.startsWith("169.254."))
         return;
-      ips.push(ip);
+      if (isReservedOrUnroutableIPv4(ip))
+        return;
+      candidates.push({
+        ip,
+        name: String(name || "")
+      });
     });
   });
-  const privateIPs = ips.filter((ip) => isPrivateIPv4(ip));
-  const ordered = [
-    ...privateIPs.filter((ip) => /^192\.168\./.test(ip)),
-    ...privateIPs.filter((ip) => /^10\./.test(ip)),
-    ...privateIPs.filter((ip) => /^172\.(1[6-9]|2\d|3[0-1])\./.test(ip)),
-    ...ips.filter((ip) => !isPrivateIPv4(ip))
-  ];
-  return ordered[0] || "127.0.0.1";
+  const ranked = candidates.map((candidate) => ({
+    ...candidate,
+    score: calcCandidateScore(candidate)
+  })).sort((a, b) => b.score - a.score);
+  const preferred = ranked.find((candidate) => {
+    const isCell = isLikelyCellularInterface(candidate.name);
+    const isVirtual = isLikelyVirtualOrTunnelInterface(candidate.name);
+    return !isCell && !isVirtual && !isCgnatIPv4(candidate.ip);
+  });
+  if (preferred)
+    return preferred.ip;
+  const fallbackPrivate = ranked.find((candidate) => isPrivateIPv4(candidate.ip) && !isLikelyCellularInterface(candidate.name) && !isLikelyVirtualOrTunnelInterface(candidate.name));
+  if (fallbackPrivate)
+    return fallbackPrivate.ip;
+  return "127.0.0.1";
 };
 
 // src/index.config.js

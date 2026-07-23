@@ -21,7 +21,7 @@ jobs:
           wget -q https://raw.githubusercontent.com/Darklessing/catvod/refs/heads/main/lmentor/index.js.md5 -O remote.md5
 
           # 检查本地 MD5 文件是否存在，或者是否与远程文件不同
-          if [ ! -f ./lmentor/index.js.md5 ] || ! cmp -s remote.md5 index.js.md5; then
+          if [ ! -f ./cat/lmentor/index.js.md5 ] || ! cmp -s remote.md5 index.js.md5; then
             echo "MD5 has changed or local MD5 not found. Fetching files."
             echo "should_fetch=true" >> $GITHUB_OUTPUT
           else

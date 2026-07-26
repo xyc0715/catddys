@@ -42,6 +42,9 @@ var index_config_default = {
   wuming: {
     cookie: ""
   },
+  douban: {
+    extend: ""
+  },
   y115: {
     cookie: ""
   },
@@ -50,6 +53,40 @@ var index_config_default = {
   },
   wogg: {
     url: ""
+  },
+  zhizhen: {
+    url: ""
+  },
+  duoduo: {
+    url: ""
+  },
+  huban: {
+    url: ""
+  },
+  erxiao: {
+    url: ""
+  },
+  guanying: {
+    url: ""
+  },
+  qwmkv: {
+    url: ""
+  },
+  qiwei: {
+    url: ""
+  },
+  jutou: {
+    url: ""
+  },
+  pan123ziyuan: {
+    cookie: ""
+  },
+  guangyazhenying: {
+    cookie: ""
+  },
+  panlian: {
+    account: "",
+    password: ""
   },
   leijing: {
     url: ""

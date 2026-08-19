@@ -42,6 +42,19 @@ var index_config_default = {
   baidu: {
     cookie: ""
   },
+  panlian: {
+    account: "",
+    password: ""
+  },
+  hanxiaoquan: {
+    url: ""
+  },
+  wexDuBoKu: {
+    url: ""
+  },
+  wencai: {
+    url: ""
+  },
   muou: {
     url: ""
   },

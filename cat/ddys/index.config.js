@@ -88,9 +88,6 @@ var index_config_default = {
   ouge: {
     url: "https://woog.nxog.eu.org"
   },
-  dawogg: {
-    url: "http://149.88.87.18:6688"
-  },
   leijing: {
     url: ""
   },

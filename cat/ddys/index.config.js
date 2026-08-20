@@ -108,10 +108,6 @@ var index_config_default = {
   cms: {
     list: []
   },
-  ddys: {
-    url: "https://lovedan.net/api.php/provide/vod/",
-    categories: ["电影片", "连续剧", "海外剧", "综艺片", "动漫片", "纪录片", "短剧", "体育"]
-  },
   bili: {
     categories: "绍兴莲花落#越剧#绍剧#滑稽越剧#京剧#绍兴鹦哥戏#话剧#相声小品#郭德纲相声#苗阜相声#经典无损音乐合集#帕梅拉#太极拳#健身#舞蹈#音乐#歌曲#MV4K#演唱会4K#白噪音4K#知名UP主#说案#演讲#时事#探索发现超清#纪录片超清#软件教程#实用教程#旅游#风景4K#食谱#美食超清#搞笑#球星#动物世界超清#相戏曲#儿童#小姐姐4K#热门#旅行探险",
     cookie: "header_theme_version=CLOSE; enable_web_push=DISABLE; home_feed_column=4; CURRENT_FNVAL=4048; rpdid=|(YYlYJum)~0J'u~J~uuu)|m; DedeUserID=383861455; DedeUserID__ckMd5=ecadfa6cdc18159d; enable_feed_channel=ENABLE; _uuid=8E849A67-41052-714C-AD610-E4D10C8216A1249855infoc; buvid3=77B4D132-559E-8452-1C59-5B3702BCA49967490infoc; b_nut=1763695867; b_lsid=5D35CD7D_19AA4754F92; theme-tip-show=SHOWED; buvid4=1F6E80A9-9347-63E7-1A7D-6699997F9C0910287-023062014-ip8mBqG2VHhGUkGWQeRG3Q==; bili_ticket=eyJhbGciOiJIUzI1NiIsImtpZCI6InMwMyIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NjM5NTUwNzAsImlhdCI6MTc2MzY5NTgxMCwicGx0IjotMX0.TbGu5occ_uGqoFjIiMyQTWAKOvvvthC72gVKstHUB8g; bili_ticket_expires=1763955010; SESSDATA=15002391,1779247872,17519*b2CjBbVXHj4fREysbTW83PfFAfxMU_smsfiiBvRLwA1un9bU5BAPCXSDEI1qb8c9-lyyASVm5CYVR6QjBscmg0VkpWTGRfSm1jNzhfZGRxOFRPX1VCdjZTaWNDalMwbkQ2aTBPLWF6MkFZQnJNLTdrRzhISkZhV2JkSjFWel9LQ1RwNExCTmt5OEtRIIEC; bili_jct=74dc535f3a49c581eea9bc99016ca875; sid=enbpi387; sec_ck=PnEi2HOnVq6xIjRZcUKVCOsqr8ek8ZDm2AFqIR5udX9YnxsZ4XRI-WiXm1lGHvtjR2PQLIfvMyF9GoTwbegqy1siA0T_LydgNpm1W_8AjBsd1zCGIWpayV91kuPFkOMrwhWfyv9o1z1gy7o5oFcK_JCfxkhmuUTZhQWI6a21YY817105oNJGetLC0ogz14MwDu9uMJD_FsZuO6-h96n17XDkqSGD_SiRQSNjnbH4tpDmQQ!Mss; buvid_fp=aa43f6374eab7433171f6a9f6cdb68bd; browser_resolution=777-625"

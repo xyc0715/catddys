@@ -33,7 +33,6 @@ var index_config_default = {
   uc: {
     cookie: "cookie",
     token: "token",
-    refreshtoken: "refreshtoken",
     ut: "ut"
   },
   y115: {
@@ -41,19 +40,6 @@ var index_config_default = {
   },
   baidu: {
     cookie: ""
-  },
-  panlian: {
-    account: "",
-    password: ""
-  },
-  hanxiaoquan: {
-    url: ""
-  },
-  wexDuBoKu: {
-    url: ""
-  },
-  wencai: {
-    url: ""
   },
   muou: {
     url: ""
@@ -88,6 +74,9 @@ var index_config_default = {
   ouge: {
     url: "https://woog.nxog.eu.org"
   },
+  dawogg: {
+    url: "http://149.88.87.18:6688"
+  },
   leijing: {
     url: ""
   },
@@ -114,20 +103,7 @@ var index_config_default = {
     autoPush: true
   },
   t4: {
-    list: [
-      { name: "T4|dbo", address: "http://bob2.hkt.net.cn/miraplay/dbo.php" },
-      { name: "T4|Maflya", address: "https://seep.eu.org/https://t4.maflya.com" },
-      { name: "T4|webdev", address: "https://seep.eu.org/https://webdav.maflya.com" },
-      { name: "T4|直播", address: "https://seep.eu.org/https://t4cj.maflya.com" },
-      { name: "T4|金牌", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335666620731392?token=banye666" },
-      { name: "T4|瓜子", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335665161113600?token=banye666" },
-      { name: "T4|热播", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664787820544?token=banye666" },
-      { name: "T4|歪比", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664104148992?token=banye666" },
-      { name: "T4|毒舌", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664116731904?token=banye666" },
-      { name: "T4|星辰", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335663328202752?token=banye666" },
-      { name: "T4|爬虫", address: "https://dy.7772888.xyz/api.php/tvbox" },
-      { name: "T4|央视", address: "https://catbox.n13.club/18/央视影视.php" }
-    ]
+    list: []
   },
   cms: {
     list: []

@@ -33,7 +33,6 @@ var index_config_default = {
   uc: {
     cookie: "cookie",
     token: "token",
-    refreshtoken: "refreshtoken",
     ut: "ut"
   },
   y115: {
@@ -41,19 +40,6 @@ var index_config_default = {
   },
   baidu: {
     cookie: ""
-  },
-  panlian: {
-    account: "",
-    password: ""
-  },
-  hanxiaoquan: {
-    url: ""
-  },
-  wexDuBoKu: {
-    url: ""
-  },
-  wencai: {
-    url: ""
   },
   muou: {
     url: ""
@@ -88,6 +74,9 @@ var index_config_default = {
   ouge: {
     url: "https://woog.nxog.eu.org"
   },
+  dawogg: {
+    url: "http://149.88.87.18:6688"
+  },
   leijing: {
     url: ""
   },
@@ -114,27 +103,10 @@ var index_config_default = {
     autoPush: true
   },
   t4: {
-    list: [
-      { name: "T4|dbo", address: "http://bob2.hkt.net.cn/miraplay/dbo.php" },
-      { name: "T4|Maflya", address: "https://seep.eu.org/https://t4.maflya.com" },
-      { name: "T4|webdev", address: "https://seep.eu.org/https://webdav.maflya.com" },
-      { name: "T4|直播", address: "https://seep.eu.org/https://t4cj.maflya.com" },
-      { name: "T4|金牌", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335666620731392?token=banye666" },
-      { name: "T4|瓜子", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335665161113600?token=banye666" },
-      { name: "T4|热播", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664787820544?token=banye666" },
-      { name: "T4|歪比", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664104148992?token=banye666" },
-      { name: "T4|毒舌", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335664116731904?token=banye666" },
-      { name: "T4|星辰", address: "https://banyeomni.780420.xyz:17777/api/tvbox/source/2070335663328202752?token=banye666" },
-      { name: "T4|爬虫", address: "https://dy.7772888.xyz/api.php/tvbox" },
-      { name: "T4|央视", address: "https://catbox.n13.club/18/央视影视.php" }
-    ]
+    list: []
   },
   cms: {
     list: []
-  },
-  ddys: {
-    url: "https://lovedan.net/api.php/provide/vod/",
-    categories: ["电影片", "连续剧", "海外剧", "综艺片", "动漫片", "纪录片", "短剧", "体育"]
   },
   bili: {
     categories: "绍兴莲花落#越剧#绍剧#滑稽越剧#京剧#绍兴鹦哥戏#话剧#相声小品#郭德纲相声#苗阜相声#经典无损音乐合集#帕梅拉#太极拳#健身#舞蹈#音乐#歌曲#MV4K#演唱会4K#白噪音4K#知名UP主#说案#演讲#时事#探索发现超清#纪录片超清#软件教程#实用教程#旅游#风景4K#食谱#美食超清#搞笑#球星#动物世界超清#相戏曲#儿童#小姐姐4K#热门#旅行探险",

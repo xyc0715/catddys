@@ -33,7 +33,9 @@ var index_config_default = {
   uc: {
     cookie: "cookie",
     token: "token",
-    ut: "ut"
+    ut: "ut",
+    refreshtoken: "refreshtoken",
+    deviceId: "deviceId"
   },
   y115: {
     cookie: ""

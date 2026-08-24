@@ -33,7 +33,9 @@ var index_config_default = {
   uc: {
     cookie: "cookie",
     token: "token",
-    ut: "ut"
+    ut: "ut",
+    refreshtoken: "refreshtoken",
+    deviceId: "deviceId"
   },
   y115: {
     cookie: ""
@@ -92,6 +94,15 @@ var index_config_default = {
   },
   pans: {
     list: []
+  },
+  "123ypzysq": {
+    url: "https://pan1.me",
+    cookie: ""
+  },
+  pinglian: {
+    url: "https://pinglian.lol",
+    username: "",
+    password: ""
   },
   danmu: {
     urls: [

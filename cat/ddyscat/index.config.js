@@ -95,6 +95,10 @@ var index_config_default = {
   pans: {
     list: []
   },
+  "123ypzysq": {
+    url: "https://pan1.me",
+    cookie: ""
+  },
   danmu: {
     urls: [
       { address: "https://dm.87445211.xyz/87654321", name: "默认1" },

@@ -99,6 +99,11 @@ var index_config_default = {
     url: "https://pan1.me",
     cookie: ""
   },
+  pinglian: {
+    url: "https://pinglian.lol",
+    username: "",
+    password: ""
+  },
   danmu: {
     urls: [
       { address: "https://dm.87445211.xyz/87654321", name: "默认1" },

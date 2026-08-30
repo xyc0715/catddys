@@ -43,6 +43,9 @@ var index_config_default = {
   baidu: {
     cookie: ""
   },
+  guangya: {
+    token: ""
+  },
   muou: {
     url: ""
   },

@@ -131,7 +131,9 @@ var index_config_default = {
     cookie: ""
   },
   qsxy123: {
-    url: "https://123.qsxy.top",
+    base_url: "https://123.qsxy.top",
+    username: "",
+    password: "",
     cookie: ""
   },
   live: {

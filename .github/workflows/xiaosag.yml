@@ -21,7 +21,7 @@ jobs:
           wget -q https://raw.githubusercontent.com/xiaosag/hmtv/main/index.js.md5 -O remote.md5
 
           # 检查本地 MD5 文件是否存在，或者是否与远程文件不同
-          if [ ! -f ./xiaosag/xiaobaitulele/index.js.md5 ] || ! cmp -s remote.md5 index.js.md5; then
+          if [ ! -f ./cat/xiaosag/index.js.md5 ] || ! cmp -s remote.md5 index.js.md5; then
             echo "MD5 has changed or local MD5 not found. Fetching files."
             echo "should_fetch=true" >> $GITHUB_OUTPUT
           else
@@ -34,10 +34,10 @@ jobs:
       - name: Fetch files if MD5 changed
         if: steps.md5_check.outputs.should_fetch == 'true'
         run: |
-          wget -O ./xiaosag/xiaobaitulele/index.js.md5 https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.js.md5
-          wget -O ./xiaosag/xiaobaitulele/index.js https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.js
-          wget -O ./xiaosag/xiaobaitulele/index.config.js https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.config.js
-          wget -O ./xiaosag/xiaobaitulele/index.config.js.md5 https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.config.js.md5
+          wget -O ./cat/xiaosag/index.js.md5 https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.js.md5
+          wget -O ./cat/xiaosag/index.js https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.js
+          wget -O ./cat/xiaosag/index.config.js https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.config.js
+          wget -O ./cat/xiaosag/index.config.js.md5 https://raw.githubusercontent.com/xiaobaitulele/xptv/refs/heads/main/jstv/index.config.js.md5
 
       - name: Commit and push if there are changes
         if: steps.md5_check.outputs.should_fetch == 'true'

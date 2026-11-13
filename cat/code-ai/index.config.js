@@ -70,6 +70,17 @@ var index_config_default = {
   labi: {
     url: ""
   },
+  huajuan: {
+    urls: ["https://www.hjzhencai.top", "https://www.huanjuanwp.shop"]
+  },
+  woniu: {
+    url: "https://wn4k.com",
+    username: "",
+    password: ""
+  },
+  jinpai: {
+    url: "https://m.vv3nwjk.com"
+  },
   xiaomi: {
     url: "https://xiaomiai.site"
   },

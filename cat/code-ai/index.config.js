@@ -22,7 +22,26 @@ __export(index_config_exports, {
   default: () => index_config_default
 });
 module.exports = __toCommonJS(index_config_exports);
+
+// src/util/jjsou-providers.js
+var JJ_PROVIDERS = [
+  { type: 0, legacyType: 0, key: "quark", name: "夸克", disk: "夸克网盘", hosts: ["pan.quark.cn"], path: /^\/s\/[^/]+/ },
+  { type: 2, legacyType: 2, key: "baidu", name: "百度", disk: "百度网盘", hosts: ["pan.baidu.com"], path: /^\/s\/[^/]+/ },
+  { type: 3, legacyType: 3, key: "uc", name: "UC", disk: "UC网盘", hosts: ["drive.uc.cn"], path: /^\/s\/[^/]+/ },
+  { type: 1, key: "ali", name: "阿里", disk: "阿里云盘", hosts: ["www.alipan.com", "www.aliyundrive.com"], path: /^\/s\/[^/]+/ },
+  { type: 4, key: "tianyi", name: "天翼", disk: "天翼云盘", hosts: ["cloud.189.cn"], path: /^\/(?:t\/[^/]+|web\/share)/ },
+  { type: 5, key: "123", name: "123", disk: "123网盘", hosts: ["123684.com", "123865.com", "123912.com", "123952.com", "123592.com", "123pan.com", "123pan.cn", "123957.com"], path: /^\/(?:s\/[^/]+|123pan\/[^/]+)/ },
+  { type: 6, key: "115", name: "115", disk: "115网盘", hosts: ["115.com", "anxia.com", "115cdn.com"], path: /^\/s\/[^/]+/ },
+  { type: 7, key: "yidong", name: "移动", disk: "移动云盘", hosts: ["yun.139.com", "caiyun.139.com"], path: /^\/(?:shareweb\/|[mw]\/i)/ },
+  { type: 8, key: "guangya", name: "光鸭", disk: "光鸭网盘", hosts: ["guangyapan.com", "www.guangyapan.com"], path: /^\/s\/[^/]+/ }
+];
+var JJ_PROVIDER_KEYS = JJ_PROVIDERS.map((provider) => provider.key);
+
+// src/index.config.js
 var index_config_default = {
+  tgvideo: { channels: [], pageSize: 20, replyLimit: 300, includeComments: true, filterAds: true },
+  jjsou: { url: "https://www.jjsou.com", searchApi: "https://duanjutv.top/api/other/web_search", timeout: 15e3, providers: JJ_PROVIDER_KEYS },
+  "4kzn": { url: "https://4kzn.cc" },
   ali: {
     token: "token",
     token280: "token280"
